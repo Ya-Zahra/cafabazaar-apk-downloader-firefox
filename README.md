@@ -17,5 +17,6 @@ Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cafebazaar-a
 
 ### Donate
 
-To donate, participate in a God-pleasing work or take care of an orphan on the Imam Khomeini Relief Foundation website. This makes me extremely happy.
+To donate, participate in a God-pleasing work or take care of an orphan on the Imam Khomeini Relief Foundation website.
+This makes me extremely happy.
 http://ekram.emdad.ir/
