@@ -7,7 +7,8 @@ A simple firefox extension for downloading APKs from [cafebazaar.ir](https://caf
 
 ### Install
 
-Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cafebazaar-apk-downloader/
+~~Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cafebazaar-apk-downloader/~~
+A biased reviewer at Mozilla removed this extension, as well as the Myket.ir extension, on the grounds that it had the same code and function as the APK Downloader for the Myket.ir extension. (This is an unprofessional behavior of Mozilla)
 
 ### Known issues
 
