@@ -1,6 +1,6 @@
 {
-    "name": "Cafebazaar APK Downloader",
-    "version": "0.0.3",
+    "name": "APK Downloader for Cafebazaar.ir",
+    "version": "0.0.7",
     "manifest_version": 2,
     "description": "Generate download links for cafebazaar.ir Android apps",
 
@@ -10,9 +10,6 @@
          "38": "icons/icon-38.png"
     },
 
-    "background": {
-        "page": "src/background.html"
-    },
 
   "content_scripts": [
     {

@@ -1,4 +1,3 @@
-
 function waitForElement(selector) {
     return new Promise(function (resolve, reject) {
         let element = document.querySelector(selector)
@@ -19,8 +18,11 @@ function waitForElement(selector) {
         }, 100)
     });
 }
-
-waitForElement('div.CoverHeader__btn-area a').then(btn => {
+//AppInstallBtn newbtn
+//
+//.AppInstallBtn
+//div.DetailsPageHeader__buttons:nth-child(2) > a:nth-child(1)
+waitForElement('.AppInstallBtn').then(btn => {
     let url = btn.getAttribute('href')
 
     let pkg = new URL(url).searchParams.get('id')
@@ -37,7 +39,7 @@ waitForElement('div.CoverHeader__btn-area a').then(btn => {
                 language: 2,
                 clientVersionCode: 1100301,
                 androidClientInfo: {
-                    sdkVersion: 22,
+                    sdkVersion: 23,
                     cpu: 'x86,armeabi-v7a,armeabi'
                 },
                 clientVersion: "11.3.1",
@@ -56,14 +58,15 @@ waitForElement('div.CoverHeader__btn-area a').then(btn => {
 
         if (!res.properties || res.properties.statusCode != 200) {
             console.log('Invalid response:', res)
-            return
+            //return
         }
 
         let token = res.singleReply.appDownloadInfoReply.token
         let cdnPrefix = res.singleReply.appDownloadInfoReply.cdnPrefix[0]
         let packageSize = res.singleReply.appDownloadInfoReply.packageSize / 1024 / 1024
         let versionCode = res.singleReply.appDownloadInfoReply.versionCode || 0
-		let downloadTitle = (document.documentElement.lang == 'en') ? 'Download' : 'دانلود'
+        let downloadTitle = (document.documentElement.lang == 'en') ? 'Download' : 'دانلود'
+        let downloadTooltip = (document.documentElement.lang == 'en') ? 'Happiness of the soul of the Imam and the martyrs SALAWAT' : 'شادی روح امام و شهدا صلوات'
 
         let downloadLink = `${cdnPrefix}apks/${token}.apk`
 
@@ -72,8 +75,11 @@ waitForElement('div.CoverHeader__btn-area a').then(btn => {
         let downloadBtn = document.createElement("a")
         downloadBtn.setAttribute('class', 'btn btn-primary btn-large')
         downloadBtn.setAttribute('href', downloadLink)
-        //downloadBtn.setAttribute('title', `${token}_${pkg}_${versionCode}.apk`)
+        downloadBtn.setAttribute('title', downloadTooltip)
         downloadBtn.textContent = `${downloadTitle} (${packageSize.toFixed(2)} MB)`
+		let downloadfn = document.querySelector('.AppName').innerText
+		downloadfn += ' ' + document.querySelector('.AppSubtitles__item').innerText
+		downloadBtn.setAttribute('download',downloadfn)
 
         btn.parentNode.insertBefore(downloadBtn, btn.parentNode.childNodes[0])
         btn.parentNode.removeChild(btn)
