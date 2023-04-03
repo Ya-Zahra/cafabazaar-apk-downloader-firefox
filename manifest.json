@@ -1,37 +1,39 @@
 {
     "name": "APK Downloader for Cafebazaar.ir",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "manifest_version": 2,
     "description": "Generate download links for cafebazaar.ir Android apps",
 
     "icons": {
-         "128": "icons/icon-128.png",
-         "16": "icons/icon-16.png",
-         "38": "icons/icon-38.png"
+        "128": "icons/icon-128.png",
+        "16": "icons/icon-16.png",
+        "38": "icons/icon-38.png"
     },
 
+    "background": {
+        "page": "src/background.html"
+    },
 
-  "content_scripts": [
-    {
-      "matches": [
-        "*://cafebazaar.ir/app/*"
-      ],
-      "js": [
-        "/src/injectScript.js"
-      ],
-	  "run_at" : "document_end"
-    }
-  ],
-    "permissions": [
-		"https://cafebazaar.ir/app/*",
-		"https://api.cafebazaar.ir/*"
+    "content_scripts": [{
+            "matches": [
+                "*://cafebazaar.ir/app/*"
+            ],
+            "js": [
+                "/src/injectScript.js"
+            ],
+            "run_at": "document_end"
+        }
     ],
-	
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "{C677ACFF-593E-40CC-A182-7C40543DFBEF}",
-			"strict_min_version": "54.0"
-		}
-}
+    "permissions": [
+        "https://cafebazaar.ir/app/*",
+        "https://api.cafebazaar.ir/*"
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{C677ACFF-593E-40CC-A182-7C40543DFBEF}",
+            "strict_min_version": "54.0"
+        }
+    }
 
 }
