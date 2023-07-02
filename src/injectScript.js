@@ -8,7 +8,7 @@ Ali Borhani (https://github.com/alibo) - first developer (Google Chrome)
 Ya Zahra (https://github.com/Ya-Zahra) - developer (Firefox)
 Issue 1: Muhammad Hussein Ammari (https://github.com/xmha97) - Firefox for android
  */
-const _devMode = false;
+_devMode = true;
 
 function log(...args) {
     if (_devMode)
