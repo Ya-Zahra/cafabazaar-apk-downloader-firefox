@@ -7,7 +7,7 @@ A simple firefox extension for downloading APKs from [cafebazaar.ir](https://caf
 
 ### Install
 
-Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/cafebazaar-apk-downloader/
+Add-ons for Firefox: https://addons.mozilla.org/addon/cafebazaar-apk-downloader/
 
 ### Known issues
 
